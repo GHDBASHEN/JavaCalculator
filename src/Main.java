@@ -5,7 +5,13 @@ class Calculator extends JFrame {
     JTextField number1TextField, number2TextField;
     JButton divideButton, additionButton, subtractButton, MultiButton, clearButton;
 
-}
+    Calculator() {
+        setTitle("Simple Calculator");
+        setSize(400, 300);
+        setLayout(null);
+
+
+    }
     public class Main {
         public static void main(String[] args) {
             SwingUtilities.invokeLater(() -> {
