@@ -38,6 +38,56 @@ class Calculator extends JFrame {
         clearButton = new JButton("Clear");
         clearButton.setBounds(281, 161, 100, 25);
 
+        divideButton.addActionListener(e -> {
+            double num1 = Double.parseDouble(number1TextField.getText());
+            double num2 = Double.parseDouble(number2TextField.getText());
+            if (num2 == 0) {
+                JOptionPane.showMessageDialog(null, "Cannot Divide by Zero", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                double result = num1 / num2;
+                output.setText("" + result);
+            }
+        });
+
+        subtractButton.addActionListener(e -> {
+            double num1 = Double.parseDouble(number1TextField.getText());
+            double num2 = Double.parseDouble(number2TextField.getText());
+            double result = num1 - num2;
+            output.setText("" + result);
+        });
+
+        additionButton.addActionListener(e -> {
+            double num1 = Double.parseDouble(number1TextField.getText());
+            double num2 = Double.parseDouble(number2TextField.getText());
+            double result = num1 + num2;
+            output.setText("" + result);
+        });
+
+        MultiButton.addActionListener(e -> {
+            double num1 = Double.parseDouble(number1TextField.getText());
+            double num2 = Double.parseDouble(number2TextField.getText());
+            double result = num1 * num2;
+            output.setText("" + result);
+        });
+
+        clearButton.addActionListener(e -> {
+            number1TextField.setText("");
+            number2TextField.setText("");
+            output.setText(" ");
+        });
+
+        add(l1);
+        add(l2);
+        add(resultLabel);
+        add(output);
+        add(number1TextField);
+        add(number2TextField);
+        add(divideButton);
+        add(additionButton);
+        add(subtractButton);
+        add(MultiButton);
+        add(clearButton);
+    }
 
     }
     public class Main {
